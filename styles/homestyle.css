@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Noto+Serif:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display&display=swap');
+html {
+    font-size: 100%;
+}
+
+body {
+    margin: 0;
+    margin-bottom: 50px;
+    background-color: #1d1d1d;
+}
+
+h1,
+h2,
+h3 {
+    color: #C9C49C;
+    font-family: 'Noto Serif', serif;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+p {
+    font-family: 'Noto Sans Display', sans-serif;
+    color: #C9C49C;
+    font-size: 1.2rem;
+    margin-top: .5rem;
+    margin-bottom: 1.2rem;
+}
+
+a {
+    color: #C9C49C;
+    transition: all .2s;
+    font-family: 'Noto Sans Display', sans-serif;
+}
+
+img {
+    width: 100%;
+    border-radius: 3px;
+}
+
+iframe {
+    border-radius: 4px;
+    margin: auto;
+}
+
+
+/*--------------------------------------------------*/
+
+
+/*container for all body contents*/
+
+#container {
+    margin: auto;
+}
+
+
+/*'see more' buttons and about page link buttons*/
+
+.button:link,
+.button:visited {
+    font-size: 1.3rem;
+    margin: .75rem .5rem .75rem 0;
+    padding: .3rem .75rem .3rem .75rem;
+    border-radius: 4px;
+    background-color: #C9C49C;
+    color: #2e2e2e;
+    text-decoration: none;
+}
+
+.button:hover,
+.button:active {
+    background-color: #ecebe5;
+}
+
+
+/*--------------------------------------------------TOPBAR*/
+
+#topbar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    display: flex;
+    padding: .6rem 0;
+    background-color: #1d1d1d;
+    align-items: center;
+}
+
+
+/*TOPBAR: LINK SECTION*/
+
+#links {
+    display: flex;
+    margin: auto 0 auto auto;
+    width: max-content;
+}
+
+
+/*a inside topbar, a inside link div inside dopbar*/
+
+#topbar a,
+#links a {
+    text-decoration: none;
+    padding: .3rem .75rem .3rem .75rem;
+    margin: 0 1rem;
+}
+
+
+/*target links in link section, not title*/
+
+#links a {
+    font-size: 1.4rem;
+    border-radius: 4px;
+}
+
+#links a:hover,
+#links a:active {
+    background-color: #2b2b2b;
+}
+
+
+/*name in top left*/
+
+#title {
+    font-size: 1.8rem;
+    white-space: nowrap;
+    padding-left: 0;
+    font-family: 'Noto Serif', serif;
+    font-weight: 800;
+}
+
+
+/*--------------------------------------------------BODY CONTENTS*/
+
+
+/*container for portfolio page contents*/
+
+#gridContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1.5rem;
+}
+
+
+/*div to contain each portfolio work (image - description)*/
+
+#gridContainer div {
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/*image of portfolio work*/
+
+.homeImg {
+    margin-bottom: 1.2rem;
+}
+
+
+/*title of the portfolio work*/
+
+#gridContainer h2 {
+    margin-top: 0;
+}
+
+
+/*description of portfolio work (below title)*/
+
+#gridContainer span {
+    margin: 0 auto auto 1.6rem;
+}
+
+@media (hover: none) {
+    #topbar>a,
+    #links>a {
+        font-size: 2.8rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #gridContainer>div {
+        flex-direction: row;
+    }
+    .homeImg {
+        width: 500px;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    .homeImg {
+        width: 580px;
+    }
+    #container {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 1900px) {
+    .homeImg {
+        width: 680px;
+    }
+    #container {
+        width: 70%;
+    }
+}

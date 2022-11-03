@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<!-- BIG TODO
+- step 1 kill myself
+- step 2 everything else
+
+- This Page TODO: just include the BIG THREE\
+- ALSO LINK ITCH PAGE AT BOTTOM!!!!!!!!!!
+
+- Art TODO: include the stuff in the VP slides
+    - Character design section
+    - Illustration section
+    - pixel art section
+        - screenshots section
+            - categg
+            - house
+        - raw sprites section
+            - maze
+            - signalcreek
+            - garbage
+            - misc
+    - 3d models
+
+- UI/UX TODO:
+    - pixel perfect
+    - robin
+    - 
+
+- Other projects, include Pixel Perfect, Robin, Frankenstein, 3d models
+
+- garbage TODO: adjust this page to include narrative process and raw pixel art image
+
+- penne TODO: include gameplay video, itch link, overview of the development process
+    - what i did as producer
+    - what i did as bg artist
+    - what i did as ui/ux (also de facto game designer)
+    - specs and overview of game
+
+- signal TODO: include current production status
+    - what i've been doing as producer
+    - what i've been doing as artist
+    - what i've been doing in narrative
+    - what i've been doing in coding
+    - character design
+    - screenshots, early gameplay videos
+    - specs and overview of game
+
+- MISCELLANEOUS TASKS: 
+    - update linkedin
+    - update resume
+    - business card
+    - update itch page
+
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="data:;base64,=">
+    <link rel="stylesheet" href="styles/homestyle.css">
+
+</head>
+
+<body>
+    <div id="container">
+        <div id="topbar">
+            <a id="title" href="index.html">Max Seavey</a>
+            <div id="links"><a href="index.html">Games</a><a href="index.html">Art</a><a href="index.html">UI Design</a><a href="about.html">About</a></div>
+        </div>
+
+        <div id="gridContainer"></div>
+    </div>
+</body>
+<script>
+    let titles = ['Signal Creek', 'The Penne Dreadful Murder', 'The Garbage Incident'];
+    let descs = [];
+    let thumbnailImgs = ['images/garbageincident.png', 'images/garbageincident.png', 'images/garbageincident.png'];
+
+    let seemoreUrls = ['garbageabout.html', 'garbageabout.html', 'garbageabout.html'];
+
+    let itchWidgets = ['<iframe src="https://itch.io/embed/857028?bg_color=161616&amp;fg_color=ababab&amp;link_color=e8e8e8&amp;border_color=636363" width="552" height="167" frameborder="0"><a href="https://crowswalk.itch.io/the-garbage-incident">The Garbage Incident by crowswalk</a></iframe>', '1', '2', '3', '<iframe src="https://itch.io/embed/1318650?border_width=0&amp;bg_color=ffffff&amp;fg_color=000000&amp;link_color=d92850&amp;border_color=5a4574" width="550" height="165" frameborder="0"><a href="https://remxiia.itch.io/the-penne-dreadful-murder">The Penne Dreadful Murder by RemXiia, crowswalk</a></iframe>', '<iframe src="https://itch.io/embed/1026208?bg_color=000000&amp;fg_color=ffffff&amp;link_color=e2c16f&amp;border_color=3b526d" width="552" height="167" frameborder="0"><a href="https://david-liao.itch.io/house-final">House: The Fan Game by David Liao, Rem\'s Games, TalkingChicken, crowswalk</a></iframe>']
+
+    
+
+    
+    descs[1] = `insert Penne description here</p><p>${seeMore(1)}`;
+
+
+    descs[2] = `3-week prototype created in <a href="http://twinery.org/" target="_blank">Twine</a>, a Javascript framework for choice-based narrative games. Working in a group of 4, I contributed project management, visual design, coding, and writing.</p><p>${itchWidgets[0]}</p><p>${seeMore(0)}`;
+
+
+
+
+
+
+    let gridContain = document.getElementById('gridContainer');
+
+    function projectListing(title, desc, thumbnailUrl) {
+        gridContain.innerHTML += `<div><img class="homeImg" src="${thumbnailUrl}"><span><h2>${title}</h2><p>${desc}</p></span></div>`;
+    }
+
+    function seeMore(index) {
+        return `<a class="button" href="${seemoreUrls[index]}">See More</a>`;
+    }
+
+    for (let i = 0; i < titles.length; i++) {
+        projectListing(titles[i], descs[i], thumbnailImgs[i]);
+    }
+</script>
+
+</html>
