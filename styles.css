@@ -46,6 +46,16 @@ iframe {
     margin: auto;
 }
 
+.linkpage:link, .linkpage:visited {
+    font-size: 4rem;
+    margin: .75rem .5rem .75rem 0;
+    padding: .3rem .75rem .3rem .75rem;
+    border-radius: 4px;
+    background-color: #C9C49C;
+    color: #2e2e2e;
+    text-decoration: none;
+}
+
 
 /*--------------------------------------------------*/
 
