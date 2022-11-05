@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Noto+Serif:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Source+Serif+Pro&display=swap');
+
 html {
     font-size: 100%;
 }
@@ -14,7 +14,7 @@ h1,
 h2,
 h3 {
     color: #C9C49C;
-    font-family: 'Noto Serif', serif;
+    font-family: 'Source Serif Pro', serif;
 }
 
 h2 {
@@ -23,7 +23,7 @@ h2 {
 }
 
 p {
-    font-family: 'Noto Sans Display', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     color: #C9C49C;
     font-size: 1.2rem;
     margin-top: .5rem;
@@ -33,7 +33,7 @@ p {
 a, span {
     color: #C9C49C;
     transition: all .2s;
-    font-family: 'Noto Sans Display', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 img {
@@ -126,7 +126,7 @@ iframe {
     font-size: 1.8rem;
     white-space: nowrap;
     padding-left: 0;
-    font-family: 'Noto Serif', serif;
+    font-family: 'Source Serif Pro', serif;
     font-weight: 800;
 }
 
