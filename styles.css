@@ -135,7 +135,8 @@ iframe {
 #title {
     font-size: 1.8rem;
     white-space: nowrap;
-    padding-left: 0;
+    /* padding-left: 0; */
+    padding-left: .75rem;
     font-family: 'Source Serif Pro', serif;
     font-weight: 800;
 }
