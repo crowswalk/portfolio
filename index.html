@@ -1,51 +1,7 @@
 <!DOCTYPE html>
 
 <!-- BIG TODO
-- step 1 kill myself
-- step 2 everything else
 
-- This Page TODO: just include the BIG THREE\
-- ALSO LINK ITCH PAGE AT BOTTOM!!!!!!!!!!
-
-- Art TODO: include the stuff in the VP slides
-    - Character design section
-    - Illustration section
-    - pixel art section
-        - screenshots section
-            - categg
-            - house
-        - raw sprites section
-            - maze
-            - signalcreek
-            - garbage
-            - misc
-    - 3d models
-
-- UI/UX TODO:
-    - pixel perfect
-    - robin
-    - 
-
-- Other projects, include Pixel Perfect, Robin, Frankenstein, 3d models
-
-- garbage TODO: adjust this page to include narrative process and raw pixel art image
-
-- penne TODO: include gameplay video, itch link, overview of the development process
-    - what i did as producer
-    - what i did as bg artist
-    - what i did as ui/ux (also de facto game designer)
-    - specs and overview of game
-
-- signal TODO: include current production status
-    - what i've been doing as producer
-    - what i've been doing as artist
-    - what i've been doing in narrative
-    - what i've been doing in coding
-    - character design
-    - screenshots, early gameplay videos
-    - specs and overview of game
-
-- MISCELLANEOUS TASKS: 
     - update linkedin
     - update resume
     - business card
@@ -56,55 +12,160 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="data:;base64,=">
-    <link rel="stylesheet" href="styles/homestyle.css">
+    <link rel="stylesheet" href="styles.css">
 
 </head>
 
 <body>
     <div id="container">
         <div id="topbar">
-            <a id="title" href="index.html">Max Seavey</a>
-            <div id="links"><a href="index.html">Games</a><a href="index.html">Art</a><a href="index.html">UI Design</a><a href="about.html">About</a></div>
+            <span id="title" href="index.html">Max Seavey</span>
+            <div id="links"><span onclick="displayPage()">Games</span><span onclick="displayPage()">Art</span><span
+                    onclick="displayPage()">About</span></div>
         </div>
 
-        <div id="gridContainer"></div>
-    </div>
+        <div id="pages">
+            <div id="games" style="padding:0;">
+                <div id="gridContainer"></div>
+            </div>
+
+            <div id="aboutContain" style="height:min-content; display: none;">
+                <img src="images/pocky.jpg">
+                <div id="aboutSection">
+                    <h1>About</h1>
+                    <div id="socials">
+                        <a class="button socialLink" target="_blank"
+                            href="https://www.linkedin.com/in/max-seavey-91b700183/">Linkedin</a>
+                        <a class="button socialLink" target="_blank" href="https://github.com/cvmaxie">GitHub</a>
+                        <a class="button socialLink" target="_blank" href="https://crowswalk.itch.io/">itch.io</a>
+                        <a class="button socialLink" target="_blank" href="max_seavey_resume.pdf">Resume</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="signalcreek_page">
+                <h1>Signal Creek</h1>
+                <p>shit happens here</p>
+                <!-- 
+                    - signal TODO: include current production status
+                    - what i've been doing as producer
+                    - what i've been doing as artist
+                    - what i've been doing in narrative
+                    - what i've been doing in coding
+                    - character design
+                    - screenshots, early gameplay videos
+                    - specs and overview of game
+                 -->
+            </div>
+
+            <div id="pennedreadful_page">
+                <h1>The Penne Dreadful Murder</h1>
+                <!-- 
+                    - penne TODO: include gameplay video, itch link, overview of the development process
+                    
+                    - what i did as producer
+                    - what i did as bg artist
+                    - what i did as ui/ux (also de facto game designer)
+                    - specs and overview of game
+                 -->
+                <p>shit happens here</p>
+            </div>
+
+            <div id="garbageincident_page">
+                <h1>The Garbage Incident</h1>
+                <p>shit happens here</p>
+            </div>
+
+            <div id="art">
+                <h1>My fucking art bro</h1>
+                <p>shit happens here</p>
+                <!-- 
+                    - Art TODO: include the stuff in the VP slides
+                    - Character design section
+                    - Illustration section
+                    - pixel art section
+                        - screenshots section
+                            - categg
+                            - house
+                        - raw sprites section
+                            - maze
+                            - signalcreek
+                            - garbage
+                            - misc
+                    - 3d models
+                 -->
+            </div>
+        </div>
+
 </body>
 <script>
-    let titles = ['Signal Creek', 'The Penne Dreadful Murder', 'The Garbage Incident'];
-    let descs = [];
-    let thumbnailImgs = ['images/garbageincident.png', 'images/garbageincident.png', 'images/garbageincident.png'];
+    const signalcreek = {
+        title: 'Signal Creek',
+        thumbnail: 'images/signalcreek_thumbnail.png',
+        seeMore: 'garbageabout.html',
 
-    let seemoreUrls = ['garbageabout.html', 'garbageabout.html', 'garbageabout.html'];
+        itchWidget: ``,
 
-    let itchWidgets = ['<iframe src="https://itch.io/embed/857028?bg_color=161616&amp;fg_color=ababab&amp;link_color=e8e8e8&amp;border_color=636363" width="552" height="167" frameborder="0"><a href="https://crowswalk.itch.io/the-garbage-incident">The Garbage Incident by crowswalk</a></iframe>', '1', '2', '3', '<iframe src="https://itch.io/embed/1318650?border_width=0&amp;bg_color=ffffff&amp;fg_color=000000&amp;link_color=d92850&amp;border_color=5a4574" width="550" height="165" frameborder="0"><a href="https://remxiia.itch.io/the-penne-dreadful-murder">The Penne Dreadful Murder by RemXiia, crowswalk</a></iframe>', '<iframe src="https://itch.io/embed/1026208?bg_color=000000&amp;fg_color=ffffff&amp;link_color=e2c16f&amp;border_color=3b526d" width="552" height="167" frameborder="0"><a href="https://david-liao.itch.io/house-final">House: The Fan Game by David Liao, Rem\'s Games, TalkingChicken, crowswalk</a></iframe>']
+        description: `<p><b>What I'm currently working on!</p></b>
+        <p>Negotiations for the demolition of Signal Creek Shopping mall are underway. Nick, Nour and Ms. Suwan are brought together</p>
+        <p><b>Roles: </b>Production, Art, Narrative Design, UI/UX</p>
+        `
+    };
 
-    
+    const pennedreadful = {
+        title: 'The Penne Dreadful Murder',
+        thumbnail: 'images/pennedreadful_thumbnail.png',
+        seeMore: 'garbageabout.html',
 
-    
-    descs[1] = `insert Penne description here</p><p>${seeMore(1)}`;
+        itchWidget: `<iframe frameborder="0" src="https://itch.io/embed/1523370?bg_color=000000&amp;fg_color=ffffff&amp;link_color=e46898&amp;border_color=333333" width="552" height="167"><a href="https://crowswalk.itch.io/the-penne-dreadful-murder">The Penne Dreadful Murder by crowswalk, meddykip, Matt Piedra, VenusGames, Sarah Slovak, TalkingChicken, Coby Hilelly, aw225</a></iframe>`,
 
+        description: `
+        <p>Detective Pennelope Scout must solve a murder case in the mysterious, cult-like town of Timsville. Uncover the town's secrets in this point-and-click murder mystery!</p>
+        <p><b>Roles: </b>Production, UI Design, Background Art</p>
+        `
+    };
 
-    descs[2] = `3-week prototype created in <a href="http://twinery.org/" target="_blank">Twine</a>, a Javascript framework for choice-based narrative games. Working in a group of 4, I contributed project management, visual design, coding, and writing.</p><p>${itchWidgets[0]}</p><p>${seeMore(0)}`;
+    const garbageincident = {
+        title: 'Garbage Incident',
+        thumbnail: 'images/garbageincident_thumbnail.png',
+        seeMore: 'garbageabout.html',
 
+        itchWidget: '<iframe src="https://itch.io/embed/857028?bg_color=161616&amp;fg_color=ababab&amp;link_color=e8e8e8&amp;border_color=636363"width="552" height="167" frameborder="0"><a href="https://crowswalk.itch.io/the-garbage-incident">The Garbage Incident by crowswalk</a></iframe>',
 
-
-
-
+        description: `
+        <p>You're Georgie, the diplomat of the Rat clan! Your job: find out who violated the Rat-Pigeon-Squirrel Weekly Garbage Treaty.  The Pigeons claim their rightful share of garbage was stolen!</p>
+        <p>3-week prototype created in <a href="http://twinery.org/" target="_blank">Twine</a>.</p>
+        <p><b>Roles: </b>UI Design, Narrative Design, Pixel Art</p>
+        `,
+    };
 
     let gridContain = document.getElementById('gridContainer');
 
-    function projectListing(title, desc, thumbnailUrl) {
-        gridContain.innerHTML += `<div><img class="homeImg" src="${thumbnailUrl}"><span><h2>${title}</h2><p>${desc}</p></span></div>`;
+    function projectListing(title, desc, thumbnailUrl, itch) {
+        gridContain.innerHTML +=
+            `<div>
+            <img class="homeImg" src="${thumbnailUrl}">
+            <span>
+                <h2>${title}</h2>
+                ${desc}
+                ${itch}
+                <!-- <p>${seeMoreButton(title)}</p> -->
+            </span>
+        </div>`;
     }
 
-    function seeMore(index) {
-        return `<a class="button" href="${seemoreUrls[index]}">See More</a>`;
+    function seeMoreButton(url) {
+        return `<a class="button" href="${url}">See More</a>`;
     }
 
-    for (let i = 0; i < titles.length; i++) {
-        projectListing(titles[i], descs[i], thumbnailImgs[i]);
+    projectListing(signalcreek.title, signalcreek.description, signalcreek.thumbnail, signalcreek.itchWidget);
+    projectListing(pennedreadful.title, pennedreadful.description, pennedreadful.thumbnail, pennedreadful.itchWidget);
+    projectListing(garbageincident.title, garbageincident.description, garbageincident.thumbnail, garbageincident.itchWidget);
+
+    function displayPage() {
+
     }
+
 </script>
 
 </html>
