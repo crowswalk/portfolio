@@ -10,6 +10,19 @@
     <meta charset="UTF-8">
     <link rel="icon" href="data:;base64,=">
     <link rel="stylesheet" href="styles.css">
+    <style>
+    .gridbox {
+        line-height: 0;
+        box-sizing: border-box;
+        margin: 0;
+        column-gap: 8px;
+        column-count: 4;
+        justify-content: center;
+   }
+    .griditem {
+        display: inline;
+   }
+    </style>
 
 </head>
 
@@ -20,7 +33,9 @@
             <div id="links">
                 <a href="index.html">Games</a>
                 <a href="art_portfolio_max_seavey.pdf">Art</a>
-                <a href="links.html/index.html">Links</a>
+                <a href="https://crowswalk.itch.io/">itch.io</a>
+                <a href="https://github.com/crowswalk">GitHub</a>
+                <a href="https://www.linkedin.com/in/max-seavey/">Linkedin</a>
                 <!-- <span onclick="displayPage()">About</span> -->
             </div>
         </div>
@@ -30,7 +45,7 @@
                 <div id="gridContainer"></div>
             </div>
 
-            <div id="aboutContain" style="height:min-content; display: none;">
+            <!-- <div id="aboutContain" style="height:min-content; display: none;">
                 <img src="images/pocky.jpg">
                 <div id="aboutSection">
                     <h1>About</h1>
@@ -42,7 +57,7 @@
                         <a class="button socialLink" target="_blank" href="max_seavey_resume.pdf">Resume</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div id="signalcreek_page" style="display: none;">
                 <h1>Signal Creek</h1>
@@ -77,24 +92,9 @@
                 <p>shit happens here</p>
             </div>
 
-            <div id="art" style="display: none;">
-                <h1>My fucking art bro</h1>
-                <p>shit happens here</p>
-                <!-- 
-                    - Art TODO: include the stuff in the VP slides
-                    - Character design section
-                    - Illustration section
-                    - pixel art section
-                        - screenshots section
-                            - categg
-                            - house
-                        - raw sprites section
-                            - maze
-                            - signalcreek
-                            - garbage
-                            - misc
-                    - 3d models
-                 -->
+            <div id="art" class="gridbox" style="display: none;">
+
+                
             </div>
         </div>
 
@@ -103,22 +103,21 @@
     const signalcreek = {
         title: 'Signal Creek',
         thumbnail: 'images/signalcreek_thumbnail.png',
-        seeMore: 'garbageabout.html',
+        seeMoreUrl: 'signalcreek_portfolio.pdf',
 
         itchWidget: ``,
 
         description: `<p><b>What I'm currently working on!</p></b>
         <p>Negotiations for the demolition of Signal Creek Shopping mall are underway. Nick, Nour and Ms. Suwan revisit the mall for the final time, and are transposed to a parallel dimension that manifests their memories and subconscious desires.</p>
         <p><b>Roles: </b>Production, Art, Narrative Design, UI/UX</p>
-        <a class="button" href="https://docs.google.com/document/d/1YfxbPd9z4WQM3caXBJK-ApZRjW2nSH0cOGHDJe8yPGo/edit?usp=sharing" target="_blank">See More</a>
-
+        <p>itch page coming (very) soon!</p>
         `
     };
 
     const pennedreadful = {
         title: 'The Penne Dreadful Murder',
         thumbnail: 'images/pennedreadful_thumbnail.png',
-        seeMore: 'garbageabout.html',
+        seeMoreUrl: 'pennedreadful_portfolio.pdf',
 
         itchWidget: `<iframe frameborder="0" src="https://itch.io/embed/1523370?bg_color=000000&amp;fg_color=ffffff&amp;link_color=e46898&amp;border_color=333333" width="552" height="167"><a href="https://crowswalk.itch.io/the-penne-dreadful-murder">The Penne Dreadful Murder by crowswalk, meddykip, Matt Piedra, VenusGames, Sarah Slovak, TalkingChicken, Coby Hilelly, aw225</a></iframe>`,
 
@@ -131,7 +130,7 @@
     const garbageincident = {
         title: 'Garbage Incident',
         thumbnail: 'images/garbageincident_thumbnail.png',
-        seeMore: 'garbageabout.html',
+        seeMoreUrl: 'https://crowswalk.itch.io/the-garbage-incident',
 
         itchWidget: '<iframe src="https://itch.io/embed/857028?bg_color=161616&amp;fg_color=ababab&amp;link_color=e8e8e8&amp;border_color=636363"width="552" height="167" frameborder="0"><a href="https://crowswalk.itch.io/the-garbage-incident">The Garbage Incident by crowswalk</a></iframe>',
 
@@ -143,8 +142,9 @@
     };
 
     let gridContain = document.getElementById('gridContainer');
+    let artPage = document.getElementById('art')
 
-    function projectListing(title, desc, thumbnailUrl, itch) {
+    function projectListing(title, desc, thumbnailUrl, itch, seemoreUrl) {
         gridContain.innerHTML +=
             `<div>
             <img class="homeImg" src="${thumbnailUrl}">
@@ -152,7 +152,7 @@
                 <h2>${title}</h2>
                 ${desc}
                 ${itch}
-                <!-- <p>${seeMoreButton(title)}</p> -->
+                <p>${seeMoreButton(seemoreUrl)}</p>
             </span>
         </div>`;
     }
@@ -161,12 +161,19 @@
         return `<a class="button" href="${url}">See More</a>`;
     }
 
-    projectListing(signalcreek.title, signalcreek.description, signalcreek.thumbnail, signalcreek.itchWidget);
-    projectListing(pennedreadful.title, pennedreadful.description, pennedreadful.thumbnail, pennedreadful.itchWidget);
-    projectListing(garbageincident.title, garbageincident.description, garbageincident.thumbnail, garbageincident.itchWidget);
+    projectListing(signalcreek.title, signalcreek.description, signalcreek.thumbnail, signalcreek.itchWidget, signalcreek.seeMoreUrl);
+    projectListing(pennedreadful.title, pennedreadful.description, pennedreadful.thumbnail, pennedreadful.itchWidget, pennedreadful.seeMoreUrl);
+    projectListing(garbageincident.title, garbageincident.description, garbageincident.thumbnail, garbageincident.itchWidget, garbageincident.seemoreUrl);
+
+    let artUrls = ['images/pocky.jpg', 'images/house_thumb.png', 'images/pocky.jpg', 'images/house_thumb.png','images/pocky.jpg', 'images/house_thumb.png', 'images/pocky.jpg']
+    artUrls.forEach(element => artListing(element))
 
     function displayPage() {
+        
+    }
 
+    function artListing(url) {
+        artPage.innerHTML += `<img class="griditem" src="${url}">`
     }
 
 </script>
