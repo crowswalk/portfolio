@@ -108,9 +108,11 @@
         #links {
             display: flex;
             margin: auto 0 auto auto;
-            width: max-content;
+            /* width: max-content; */
+           
+            flex-wrap:wrap;
         }
-        /*span inside topbar, span inside link div inside dopbar*/
+        /*span inside topbar, span inside link div inside topbar*/
         
         #topbar a,
         #links a {
@@ -231,7 +233,7 @@
         }
         
         #birdboy {
-            width: 15rem;
+            width: 75%;
             /* position: relative;
             left: -32rem;
             margin-top: -15rem;
@@ -245,20 +247,39 @@
             padding: .8rem; */
             text-align: center;
         }
+
+        #mobiletitle{
+            display: none;
+        }
+
         
         @media (hover: none) {
-            #title {
-                display: none;
-            }
+
             #topbar>span,
             #topbar>a,
             #links>a {
-                font-size: 2rem;
+                font-size: 3rem;
             }
             #links {
                 justify-content: center;
                 margin: auto;
-                width: min-content;
+                /* width: min-content; */
+                min-width: 50rem;
+            }
+            #title{
+                display: none;
+            }
+            #mobiletitle{
+                display: block;
+            }
+        }
+
+        @media only screen and (min-width: 900px) {
+            #birdboy{
+                width: 30%;
+            }
+            #links{
+                min-width: unset;
             }
         }
         
@@ -280,6 +301,9 @@
             }
             .picbox {
                 width: 60%;
+            }
+            #birdboy{
+                width: 20%;
             }
         }
         
@@ -307,7 +331,7 @@
 
 </head>
 
-<body style="margin: 0; margin-bottom: 50px; background-color: #1d1d1d; font-size: 100%;">
+<body style="margin: 0; margin-bottom: 50px; background-color: #1d1d1d; font-size: 100%">
     <div id="container">
         <div id="topbar">
             <span id="title" href="index.html">Max Seavey</span>
@@ -317,33 +341,29 @@
                 <a href="https://crowswalk.itch.io/">itch.io/</a>
                 <a href="https://github.com/crowswalk">GitHub/</a>
                 <a href="https://www.linkedin.com/in/max-seavey/">Linkedin/</a>
+                <a href="maxseavey_resume.pdf">Resume</a>
                 <!-- <span onclick="displayPage()">About</span> -->
             </div>
         </div>
 
         <div id="pages">
             <div id="games">
-
                 <div id="about">
-
+                    <h1 id="mobiletitle">Max Seavey</h1>
                     <p><strong>Hello!</strong> I'm a narrative game designer and multidisciplinary <strong>artist</strong> based in New York City.
                         <br>I love to tell stories of real human experiences in imaginative ways.
                     </p>
                     <p>Also, I'm a huge fan of <strong>bubble tea</strong> and all kinds of <strong>little guys</strong>!</p>
-                    <p style="font-size: .9rem ">This website's code is locally grown by max. If there's imperfections, that's because it's organic!</p>
+                    <p style="font-size: .9rem">This website's code is locally grown by max. If there's imperfections, that's because it's organic!</p>
 
                     <img id="birdboy" src="images/talkingguy.png">
-                </div>
-                <div id="birdbox">
-
-
                 </div>
                 <hr>
                 <div id="gameContainer" class="gridContainer"></div>
             </div>
 
             <div id="signalcreek_page" style="display: none;">
-                <div id="signalCreekGrid" class="gridContainer "></div>
+                <div id="signalCreekGrid" class="gridContainer"></div>
                 <hr>
                 <div class="contentContainer">
                     <p>
@@ -467,9 +487,10 @@
         thumbnail: 'images/sc_thumbnail.png',
         seeMoreUrl: 'signalcreek_page',
 
-        itchWidget: `<iframe frameborder="0 " src="https://itch.io/embed/1835348?bg_color=13141f&amp;fg_color=ffffff&amp;link_color=c8b8cd&amp;border_color=41424d " width="552 " height="167 "><a href="https://crowswalk.itch.io/signal-creek ">Signal Creek by crowswalk</a></iframe>`,
+        itchWidget: `<iframe frameborder="0" src="https://itch.io/embed/1835348?bg_color=13141f&amp;fg_color=ffffff&amp;link_color=c8b8cd&amp;border_color=41424d" width="552" height="167"><a href="https://crowswalk.itch.io/signal-creek">Signal Creek by crowswalk</a></iframe>`,
 
-        description: `<p><b>What I'm currently working on!</b></p>
+        description: `
+        <p><b>What I'm currently working on!</b></p>
         <p>Negotiations for the demolition of Signal Creek Shopping mall are underway. Nick, Nour and Ms. Suwan revisit the mall for the final time, and are transposed to a parallel dimension that manifests their memories and subconscious desires.</p>
         <p><b>Roles: </b>Production, Art, Programming, Writing</p>
         `
@@ -480,7 +501,7 @@
         thumbnail: 'images/penne_thumbnail.png',
         seeMoreUrl: 'pennedreadful_page',
 
-        itchWidget: `<iframe frameborder="0 " src="https://itch.io/embed/1523370?bg_color=000000&amp;fg_color=ffffff&amp;link_color=e46898&amp;border_color=333333 " width="552 " height="167 "><a href="https://crowswalk.itch.io/the-penne-dreadful-murder ">The Penne Dreadful Murder by crowswalk, meddykip, Matt Piedra, VenusGames, Sarah Slovak, TalkingChicken, Coby Hilelly, aw225</a></iframe>`,
+        itchWidget: `<iframe frameborder="0" src="https://itch.io/embed/1523370?bg_color=000000&amp;fg_color=ffffff&amp;link_color=e46898&amp;border_color=333333" width="552" height="167"><a href="https://crowswalk.itch.io/the-penne-dreadful-murder">The Penne Dreadful Murder by crowswalk, meddykip, Matt Piedra, VenusGames, Sarah Slovak, TalkingChicken, Coby Hilelly, aw225</a></iframe>`,
 
         description: `
         <p>Detective Pennelope Scout must solve a murder case in the mysterious, cult-like town of Timsville. Uncover the town's secrets in this point-and-click murder mystery!</p>
@@ -493,11 +514,11 @@
         thumbnail: 'images/garbageincident_thumbnail.png',
         seeMoreUrl: 'garbageincident_page',
 
-        itchWidget: '<iframe src="https://itch.io/embed/857028?bg_color=161616&amp;fg_color=ababab&amp;link_color=e8e8e8&amp;border_color=636363 "width="552 " height="167 " frameborder="0 "><a href="https://crowswalk.itch.io/the-garbage-incident ">The Garbage Incident by crowswalk</a></iframe>',
+        itchWidget: '<iframe src="https://itch.io/embed/857028?bg_color=161616&amp;fg_color=ababab&amp;link_color=e8e8e8&amp;border_color=636363"width="552" height="167" frameborder="0"><a href="https://crowswalk.itch.io/the-garbage-incident">The Garbage Incident by crowswalk</a></iframe>',
 
         description: `
         <p>You're Georgie, the diplomat of the Rat clan! Your job: find out who violated the Rat-Pigeon-Squirrel Weekly Garbage Treaty.  The Pigeons claim their rightful share of garbage was stolen!</p>
-        <p>3-week prototype created in <a href="http://twinery.org/ " target="_blank ">Twine</a>.</p>
+        <p>3-week prototype created in <a href="http://twinery.org/" target="_blank">Twine</a>.</p>
         <p><b>Roles: </b>UI Design, Narrative Design, Pixel Art</p>
         `
     };
@@ -508,7 +529,7 @@
         if (hasSeeMore) {
             gridContain.innerHTML +=
                 `<div>
-                <img class="homeImg " src="${thumbnailUrl} ">
+                <img class="homeImg" src="${thumbnailUrl}">
                 <span>
                     <h2>${title}</h2>
                     ${desc}
@@ -517,12 +538,10 @@
                 </span>
             </div>
             `;
-            return
-        }
-
-        gridContain.innerHTML +=
+        } else {
+            gridContain.innerHTML +=
             `<div>
-                <img class="homeImg " src="${thumbnailUrl} ">
+                <img class="homeImg" src="${thumbnailUrl}">
                 <span>
                     <h2>${title}</h2>
                     ${desc}
@@ -530,6 +549,7 @@
                 </span>
             </div>
             `;
+        }
 
     }
 
